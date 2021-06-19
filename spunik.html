@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <title></title><head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+
+
+<style>
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+</style>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+ {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOh4ytkT-y7sNvT7CgpV-yx58m26dLNb9h2qUDHLcRUSCUsD7FEfmFXxXYW7GAoFrjcI&usqp=CAU">
+
+<div class="header">
+  <a href="#default" class="logo">
+    <font color="green" size="+3">
+<h1 align="center"><u>SPUTNIK V</u></h1></font></a>
+  <div class="header-right">
+    <a class="active" href="project2.html">Home</a>
+    <a href="https://www.cowin.gov.in/home">Registration</a>
+   
+  </div>
+  
+  </div>
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Ask your Question</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<body background="https://cutewallpaper.org/21/solid-colored-wallpapers/Solid-Pink-Wallpaper-Source-Light-Color,-Hd-Wallpapers-.jpg">
+   
+<h2 style="color: red;"><u>What do we know about Sputnik V?</u></h2>
+<blockquote>
+<h2 style="font-size:20px"> The vaccine, developed by Moscow's Gamaleya Institute, initially generated some controversy after being rolled out before the final trial data had been released.<br><br>
+
+But scientists say its benefits have now been demonstrated.<br><br>
+
+It uses a cold-type virus, engineered to be harmless, as a carrier to deliver a small fragment of the coronavirus to the body.<br><br>
+
+Safely exposing the body to a part of the virus's genetic code in this way allows it to recognise the threat and learn to fight it off, without the risk of becoming ill.<br><br>
+
+After being vaccinated, the body starts to produce antibodies especially tailored to the coronavirus.<br><br>
+
+This means that the immune system is primed to fight coronavirus when it encounters it for real.<br><br>
+
+It can be stored at temperatures of between 2 and 8C degrees (a standard fridge is roughly 3-5C degrees) making it easier to transport and store.<br><br></h2></blockquote>
+<p align="center">
+<img src="https://images.livemint.com/img/2021/05/14/1600x900/dbf8a87e55e64661b65630f5a9e20686-dbf8a87e55e64661b65630f5a9e20686-0_1620976802206_1620976822346.jpg" style="width: 50%;">
+</p>
+<h2 style="color: red;"><u> But it has a different second dose</u></h2>
+<blockquote>
+<h2 style="font-size:20px"> Unlike other similar vaccines, the Sputnik jab uses two slightly different versions of the vaccine for the first and the second dose - given 21 days apart.
+<br><br>
+They both target the coronavirus's distinctive "spike", but use different vectors - the neutralised virus that carries the spike to the body.<br><br>
+
+The idea is that using two different formulas boosts the immune system even more than using the same version twice - and may give longer-lasting protection.<br><br>
+As well as proving effective, it was also safe with no serious reactions linked to the vaccine during the trial.<br><br>
+
+Some side-effects to a vaccine are expected, but these are usually mild, including a sore arm, tiredness and a bit of a temperature. There were no deaths or serious illnesses in the vaccinated group linked to the jab.<br><br>
+
+Sputnik V has been approved so far in 60 countries, including Argentina, Palestinian territories, Venezuela, Hungary, UAE and Iran.</h2>
+</blockquote>
+<p align="center">
+    <img src="https://images.financialexpress.com/2021/04/spu1200.jpg" alt="Italian" style="width: 50%;"></p>
+<h2 style="color: red;"><u> When will Sputnik V be available in India?</u></h2>
+<blockquote>
+<h2 style="font-size:20px"> The Russian Direct Investment Fund (RDIF), which is marketing the vaccine, has signed deals to produce more than 750 million doses of Sputnik V in India with six domestic vaccine makers, according to reports.<br><br>
+
+Hyderabad-based pharmaceutical major Dr Reddy's Laboratories will be importing the first batch of 125 million doses to India during this quarter.<br><br>
+
+Supplies will be ramped up only next quarter when six Indian firms begin making the vaccine under the supervision of Dr Reddy's.<br><br>
+
+Until then, India will mostly depend on two previously approved candidates, Covaxin and Covishield.</h2>
+</blockquote><br><br>
+<h2 style="color: red;"><u> Sputnik V Vaccine Side Effects</u></h2>
+<blockquote>
+    <h2 style="font-size:20px">
+On April 14, 2021, the Russian Gamaleya Center announced, 'A comprehensive analysis of adverse events during clinical trials and over the course of mass vaccinations with the Sputnik V vaccine showed no cases of cerebral venous sinus thrombosis.</h2></blockquote>
+<p align="center">
+    <img src="https://images.hindustantimes.com/img/2021/06/05/550x309/2021-05-24T165037Z_1706389290_RC2GMN9YNF1S_RTRMADP_3_HEALTH-CORONAVIRUS-ARGENTINA-VACCINE_1621883404271_1622914276440.JPG"></p>
+<h2 style="color: red;"><u> Sputnik V Vaccine Ingredients </u></h2>
+<blockquote>
+    <h2 style="font-size:20px">
+The active components are a modified replication-defective adenovirus of a different serotype (Serotype 26 for the first component and serotype 5 for the second), modified to include the protein S-expressing gene of SARS-CoV-2. The ingredients include Tris-(hydroxymethyl)-aminomethane, Sodium chloride, Sucrose, Magnesium chloride hexahydrate, Disodium EDTA dihydrate, Polysorbate 80, Ethanol, and Water.
+
+Interfax reported on February 12, 2021, the Sputnik V coronavirus vaccine does not contain any components prohibited by Islam, Vladimir Gushchin, head of the laboratory of mechanisms of population change of pathogenic microorganisms at the Gamaleya Center, said.</h2></blockquote>
+
+<h2 style="color: red;"><u> Sputnik V Vaccine Distribution Agreements
+</u></h2>
+<blockquote>
+    <h2 style="font-size:20px">
+As of June 7, 2021, the following 67 countries had authorized the Sputnik V Vaccine: Russia, Belarus, Argentina, Bolivia, Serbia, Algeria, Palestine, Venezuela, Paraguay, Turkmenistan, Hungary, UAE, Iran, Republic of Guinea, Tunisia, Armenia, Mexico, Nicaragua, Republika Srpska (Bosnia and Herzegovina), Lebanon, Myanmar, Pakistan, Mongolia, Bahrain, Montenegro, Saint Vincent and the Grenadines, Kazakhstan, Uzbekistan, Gabon, San Marino, Ghana, Syria, Kyrgyzstan, Guyana, Egypt, Honduras, Guatemala, Slovakia, Angola, Congo, the Republic of Djibouti, Sri Lanka, Iraq, Kenya, Morocco, Jordan, Namibia, Azerbaijan, Cameroon, Philippines, Seychelles, Mauritius, Vietnam, Antigua and Barbuda, Mali, the Republic of Panama, India, Nepal, Bangladesh, Turkish Republic, Republic of Albania, Maldives, Ecuador, Slovakia Republic, Malaysia, and Brazil.</h2></blockquote>
+<p align="center">
+    <img src="https://cdn.statcdn.com/Statistic/1195000/1196113-blank-355.png"></p>
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Privacy</h3>
+                       FOIA
+No Fear Act<br>
+OIG
+Nondiscrimination<br>
+Accessibility<br>
+                            
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>CDC Information</h3>
+                        About CDC
+Jobs<br>
+Funding<br>
+Policies<br>
+File Viewers & Players<br>
+                                            </div>
+                    <div class="col-md-6 item text">
+                        <h3>About</h3>
+                        <p>Office of Data Science Strategy Site Map Web Policies and Notices FOIA No Fear Act
+DPCPSI Home NIH Home Office of the Inspector General USA.gov
+NIH…Turning Discovery Into Health®
+
+National Institutes of Health, 9000 Rockville Pike, Bethesda, Maryland 20892
+
+U.S. Department of Health and Human Services</p>
+
+
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

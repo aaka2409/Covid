@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style>
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+</style>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+ {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+<div class="header">
+  <a href="#default" class="logo">
+
+  <div class="header-right">
+    <a class="active" href="project2.html">Home</a>
+    <a href="https://epass.jantasamvad.org/epass/relief/english/">For E-pass</a>
+   
+  </div>
+  
+  </div>
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Ask your Question</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<body background="https://www.wallpaperup.com/uploads/wallpapers/2014/10/03/470253/22c99ccd6fe6f43bbda7a5f886e6d41a.jpg">
+
+<font size="+2">
+<h1><u>
+Coronavirus Lockdown Explained: What Are Red, Orange, Green And Containment Zones?
+</u></h1></font>
+<blockquote>
+<h2 style="font-size: 20px;">
+<p align="center">
+	<img src="https://newsroompost.com/wp-content/uploads/2021/04/20210406445L-300x208.jpg" width="50%">
+</p>
+New Delhi: As the third phase of nation-wide lockdown kicks-in as the rise in the number of coronavirus cases persists, the ministry of health and family welfare released revised guidelines classifying India’s 733 districts into zones – red, orange, green and containment zone.<br><br></h2>
+</blockquote>
+
+<h1 style="font-size: 40px;"><u>
+What Is A Red, Orange, Green And Containment Zone?
+</u></h1>
+
+<blockquote>
+<h2 style="font-size: 20px;">
+<p style="color: green ;"> 
+Green Zone:</p> According to the ministry, a green zone area or district is where there are zero confirmed cases of coronavirus in the last 21 days<br><br>
+
+<p style="color: red;">
+Red Zones Or Hotspot Districts:</p> Areas with several active cases, high doubling rate of confirmed cases will be classified under Red Zones or Hotspot districts. According to the ministry guidelines, “areas that will have highest caseload districts contributing to more than 80 per cent of cases in India or highest caseload districts contributing to more than 80 per cent of cases for each state in India or districts with doubling rate less than four days”, will also be identified as red zone areas.<br><br>
+
+<p style="color: darkorange;">
+Orange Zones:</p> As per the health ministry, those zones which are neither red or green will be called Orange Zones.<br><br>
+
+In the revised guidelines, the ministry has also divided COVID-19 affected areas within red and orange districts into two more zones which are Containment zone and Buffer Zone. These two are identified by district authorities in clusters such as (colonies/wards/towns in urban centres and villages/panchayats/blocks in rural areas) and are basically those areas which are severely affected by the coronavirus outbreak.<br><br>
+</h2></blockquote>
+<p align="center">
+	<img src="https://englishtribuneimages.blob.core.windows.net/gallary-content/2020/4/Desk/2020_4$largeimg_1857562238.jpeg" width="50%">
+</p>
+<h1 style="font-size: 40px;"><u>
+What Are The Restrictions In Each Zone?</u></h1>
+<blockquote>
+
+<h2 style="font-size: 20px;">
+
+According to the revised guidelines, the Red, Orange, Green or containment Zone classification of a district will determine what activities are permitted and what kind of movement is allowed there. In the containment areas, as per the notification, there are additional restrictions.<br><br>
+
+
+<p style="color: darkblue;"> What is Not Allowed Across India, Irrespective of the Zone:</p> Travel by air, rail, metro and inter-State movement by road; schools, colleges, and other educational and training/ coaching institutions; hotels and restaurants; cinema halls, malls, gyms, sports complexes etc; social, political, cultural and other kinds of gatherings; and, religious places/ places of worship for the public.<br><br>
+
+However, movement of persons by air, rail and road is allowed for select purposes, and for purposes as permitted by the Ministry of Home Affairs. The revised guidelines also say that the movement of individuals, for all non-essential activities, shall remain strictly prohibited between 7 pm to 7 am.<br><br>
+
+Whereas, it also mentions that in all zones, persons above 65 years of age, persons with co-morbidities, pregnant women, and children below the age of 10 years, shall stay at home, except for meeting essential requirements and for health purposes.<br><br>
+
+<p align="center">
+	<img src="https://english.mathrubhumi.com/polopoly_fs/1.4663807.1591879822!/httpImage/image.png_gen/derivatives/landscape_1080_600/image.png" width="50%"></p>
+<p style="color:red;">
+Red Zones:</p> In the Red Zones, outside the Containment Zones, certain activities are prohibited in addition to those prohibited throughout the country. These are: plying of cycle rickshaws and auto-rickshaws; running of taxis and cab aggregators; intra-district and inter-district plying of buses; and, barbershops, spas and salons.<br><br>
+
+Moreover, four-wheelers with a driver and two passengers and two-wheelers without pillion riders will be allowed. Offices can open with a third of the staff. However, e-commerce activities are only allowed for essential services.<br><br>
+
+<p style="color: darkorange;">
+Orange Zones:</p> In addition to activities permitted in Red Zone, taxis and cab aggregators will be permitted with 1 driver and 1 passenger only. Inter-district movement of individuals and vehicles will be allowed for permitted activities only. Four wheeler vehicles will have a maximum of two passengers besides the driver and pillion riding will be allowed on two-wheelers. E-commerce is allowed for both essential and non-essential items in the orange zone.<br><br>
+
+<p style="color: green;">
+Green Zones:</p> All activities except those prohibited nationwide is allowed in the green zones. However, buses can operate with up to 50% seating capacity and bus depots can operate with up to 50% capacity.<br><br>
+
+<p style="color:darkgoldenrod;">
+Containment Zones:</p> Entry and exit of people will be severely restricted in this zone. Movement of people will only be allowed for the supply of essential goods and services. Almost everything else remains shut in this zone.<br><br></h2>
+</blockquote>
+
+<p align="center">
+	<img src="https://www.gannett-cdn.com/presto/2020/10/06/PWES/a433a464-9933-4491-8eba-5cf3ecedf31d-closed_2020-10-06_152633.png?auto=webp&crop=766,431,x456,y106&format=pjpg&width=1200" width="75%">
+</p>
+
+<h1 style="font-size: 40px;"><u>
+Curfew</u></h1>
+<blockquote>
+<h2 style="font-size: 20px;">
+A curfew is an order specifying a time during which certain regulations apply.Typically it is the time when individuals must stay indoors. Such an order may be issued by public authorities but also by the owner of a house to those living in the household. For instance, an au pair is typically given a curfew, which regulates when they must return to the host family's home in the evening.<br><br>
+
+Curfews are a common element of control used in martial law, though curfews can also be implemented for public safety in the event of a disaster, pandemic, or crisis.<br><br></h2>
+</blockquote>
+
+<h1 style="font-size: 40px;"><u>
+Janata Curfew
+</u></h1>
+<blockquote>
+<h2 style="font-size: 20px;">
+
+The Janata Curfew (transl.People's curfew) was a 14-hour curfew on 22 March 2020 initiated by Prime Minister of India, Shri Narendra Modi(from 7 a.m. to 9 p.m.). Every person was required to obey the curfew, with exceptions for people of "essential services" such as police, medical services, media, home delivery professionals, and firefighters. At 5 p.m. that day, all citizens were asked to stand in their doorways, balconies or windows, and clap their hands or ring their bells in appreciation for the professionals delivering these essential services. People belonging to National Cadet Corps and National Service Scheme were to enforce the curfew in the country. The Prime Minister also urged the youth to inform 10 others about Janata Curfew and encourage everyone to observe the curfew.<br><br>
+The lockdown restricted people from stepping out of their homes. All transport services–road, air and rail–were suspended, with exceptions for transportation of essential goods, fire, police and emergency services. Educational institutions, industrial establishments and 
+hospitality services were also suspended. Services such as food shops, banks and ATMs, petrol pumps, other essentials and their manufacturing are exempted. The Home Ministry stated that anyone who fails to follow the restrictions can face up to a year in jail.<br><br>
+</h2></blockquote>
+<p align="center">
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Uq-Sq2V-r8U2XVdGov3DYl5FCeXDhU6quQ&usqp=CAU" width="50%">
+</p>
+
+<h1 style="font-size: 40px;"><u>
+Relaxations
+</u></h1>
+<blockquote>
+<h2 style="font-size: 20px;">
+From 4 May 2020, the lockdown was eased with several relaxations in all zones per Ministry of Home Affair's guidelines.<br><br>
+<u>
+Activities permitted and restricted in each zone (4 – 17 May 2020)</u>
+<br>
+As part of Unlock 2.0 in July, most activities are permitted outside of containment zones, except educational institutions, international air travel, places of recreation (swimming pools, gymnasiums, theatres, entertainment parks, bars, auditoriums, and assembly halls), and large gatherings of any kind.<br><br>
+
+One of the major development was around the re-opening of wine shops. As per the guidelines of issued by the Ministry of Home Affairs, wine shops were allowed to re-open, however, people were asked to follow the protocols of social distancing and as well as wearing a mask. But in effect, things panned out to be utterly chaotic as long queues gathered outside wine shops from as early as 7 am.<br><br>
+
+This led to State Governments and Municipal Corporations deciding to shut down wine shops again in some places. (e.g. - Mumbai). While some states decided to 'discourage alcohol consumption' by levying special taxes on alcohol. Delhi imposed a 70% 'Special Corona Fees'. Andhra Pradesh increased the prices by 75%. Tamil Nadu hiked the excise duty on India Made Foreign Alcohol by 15%.<br><br>
+
+Delhi also came up with a system of e-token to avoid long queues outside wine shops. This also lead to the online sale of alcohol in some states that was previously prohibited.<br><br></h2></blockquote>
+<p align="center">
+	<img src="https://bsmedia.business-standard.com/_media/bs/img/article/2021-04/10/full/1618040757-5126.jpg"></p>
+<h2 style="font-size:20px;">As many as 8,521 people were found to have contracted the Coronavirus disease (Covid-19) in Delhi on Friday, taking the total number of cases to 706,526, while the number of active cases stands at 26,630, the health bulletin said. This is the second highest single-day spike since the pandemic began. On November 11, Delhi had reported 8,593 cases, the highest till date for the city. Amidst the massive spike, the Delhi government on Friday ordered the closure of all schools till further orders. “Due to rising covid-19 cases, all government and private schools and all the classes will remain shut till further notice," chief minister Arvind Kejriwal announced.<br>
+
+Meanwhile, the Delhi government has taken several measures to tackle the Covid-19 situation in the national capital.<br>
+
+
+Here's what is permitted and what's restricted in Delhi amid Covid surge</h2>
+
+<h2 style="font-size:40px">Night curfew</h2><br>
+<h2 style="font-size:20px;">
+Night curfew has been imposed in Delhi from 10 pm to 5 am since April 6 and will be effective till April 30. No person will be allowed to board the Delhi metro or DTC after 10 pm. Only essential services are exempted from this. They too, have to carry valid identification papers to prove their credentials as essential service providers.</h2>
+
+<h2 style="font-size:40px"> Masks mandatory </h2>
+<h2 style="font-size:20px;">
+Everyone has to wear a mask in public places for their own safety, which includes wearing a mask while driving alone in a private vehicle.<br></h2>
+ <h2 style="font-size:40px">Interstate/intrastate movement</h2>
+ <h2 style="font-size:20px;">There is no restriction on the interstate and intrastate movement/transportation of essential/non-essential goods. No special permission or e-pass required for the same.</h2>
+ <h2 style="font-size:40px">Travelling to State</h2>
+ <h2 style="font-size:20px">Those arriving in the national capital from Covid-hit states like Maharashtra, Karnataka might have to undergo random testing. Besides, the Kejriwal government has made the Aarogya Setu app mandatory. One can exit the airport immediately after sample collection, but they need to undergo mandatory 7-day home quarantine post arrival. In case their result comes positive, they can continue home quarantine or move to a hospital.</h2>
+ <h2 style="font-size:40px">Funerals, weddings</h2>
+ <h2 style="font-size:20px">In closed spaces, a maximum of 50 per cent of the hall capacity will be allowed, with a ceiling of 100 persons. In open spaces, numbers will be allowed keeping the size of the ground/ space in view with a ceiling of 200 persons subject to strict observance of wearing of face masks, maintaining social distancing, provision for thermal scanning and use of hand wash or sanitizer<br>
+
+Earlier, the state government had set the maximum number of people allowed to attend a wedding ceremony in a closed space at 200 while there was no limit for open spaces wedding celebrations.<br>
+
+No more than 50 people can gather at funeral-related events in the national capital.</h2>
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Privacy</h3>
+                       FOIA
+No Fear Act<br>
+OIG
+Nondiscrimination<br>
+Accessibility<br>
+                            
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>CDC Information</h3>
+                        About CDC
+Jobs<br>
+Funding<br>
+Policies<br>
+File Viewers & Players<br>
+                                            </div>
+                    <div class="col-md-6 item text">
+                        <h3>About</h3>
+                        <p>Office of Data Science Strategy Site Map Web Policies and Notices FOIA No Fear Act
+DPCPSI Home NIH Home Office of the Inspector General USA.gov
+NIH…Turning Discovery Into Health®
+
+National Institutes of Health, 9000 Rockville Pike, Bethesda, Maryland 20892
+
+U.S. Department of Health and Human Services</p>
+
+
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

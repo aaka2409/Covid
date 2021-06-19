@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <title></title><head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+
+
+<style>
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+</style>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+ {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOh4ytkT-y7sNvT7CgpV-yx58m26dLNb9h2qUDHLcRUSCUsD7FEfmFXxXYW7GAoFrjcI&usqp=CAU">
+
+<div class="header">
+  <a href="#default" class="logo">
+    <font color="green" size="+3">
+<h1 align="center"><u>Covaxin</u></h1></font></a>
+  <div class="header-right">
+    <a class="active" href="project2.html">Home</a>
+    <a href="https://www.cowin.gov.in/home">Registration</a>
+   
+  </div>
+  
+  </div>
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Ask your Question</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<body background="https://www.wallpaperup.com/uploads/wallpapers/2014/10/03/470253/22c99ccd6fe6f43bbda7a5f886e6d41a.jpg">
+<h1 style="color: red;"><u> 
+  Who developed Covaxin?</u></h1>
+  <blockquote>
+<h2 style="font-size: 20px;">
+Covaxin was developed by Indian pharmaceutical company Bharat Biotech in collaboration with the Indian Council of Medical Research, a government funded biomedical research institute, and its subsidiary the National Institute of Virology.
+<br><br>
+Bharat Biotech has brought to market 16 original vaccines, including for rotavirus, hepatitis B, Zika virus, and chikungunya.1 The company reportedly spent $60-$70m (£43-£50m; €50-€58m) developing Covaxin.2</h2></blockquote><br><br>
+<p align="center">
+<img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/09/25/927225-923717-covaxin-1.jpg" width="40%"></p>
+<h1 style="color: red;"><u>
+
+How does Covaxin work?</u></h1>
+<blockquote> 
+<h2 style="font-size: 20px;">
+The vaccine is similar to CoronaVac (the Chinese vaccine developed by Sinovac)3 in that it uses a complete infective SARS-CoV-2 viral particle consisting of RNA surrounded by a protein shell, but modified so that it cannot replicate.4<br><br>
+
+Covaxin comes as a two-dose regimen, recommended to be taken 28 days apart.<br><br></h2></blockquote>
+<h1 style="color: red;"><u>
+  When was Covaxin approved for public use?</u></h1>
+<blockquote>
+  <h2 style="font-size:20px ;">
+
+The Central Drugs and Standards Committee (CDSCO), India’s top drug regulator, issued an emergency approval for Covaxin on 3 January 2021, even though phase III clinical trials are still ongoing and phase II studies are unpublished.14 The regulator cited the need for protection against the potential spread of the UK variant. No peer reviewed evidence is available to show that the vaccine would be effective against this strain, although a preprint indicates promising results.15<br><br>
+
+The vaccine is currently being administered in India to people over 60 and those over 45 with comorbidities, as well as to health workers. At the time of writing, India had administered more than 100 million vaccinations, although it is not clear how many are Covaxin (most are Covishield, India’s version of the Oxford-AstraZeneca vaccine manufactured in Pune by the Serum Institute of India).<br><br>
+</h2></blockquote>
+
+<h1 style="color: red;"><u>
+Which other countries have ordered Covaxin?</u></h1>
+<blockquote><h2 style="font-size: 20px;">
+Bharat Biotech has signed deals with Ocugen, a US based biopharmaceutical company, to produce the vaccine for the US market, and Precisa Medicamentos to supply to Brazil, pending regulatory approval there.<br><br>
+</h2></blockquote>
+<p align="center">
+  <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2021-03/03/full/1614773375-9744.jpg" width="40%"></p>
+<h1 style="color: red;"><u>
+How has Covaxin been received by the medical community?</u></h1>
+<blockquote>
+  <h2 style="font-size:20px ;">
+The emergency approval before phase III trials were completed triggered widespread criticism from the scientific community in India.16<br><br>
+
+With nearly 14 million coronavirus infections at the time of writing, India has the second highest number of reported cases globally after the US, but the approval came at a time when cases were dropping.<br><br>
+
+The CDSCO said the vaccine had been approved for “restricted use in an emergency situation” and that it would be deployed in a “clinical trial mode.” This vague terminology, with no official clarification, has left doctors and scientists puzzled, though one doctor The BMJ spoke to said it implied that safety data would be collected.<br><br>
+
+The All India People’s Science Network, which represents numerous scientific organisations, described the approval of Covaxin as “hasty,” while the All India Drug Action Network, a group of non-government organisations working to increase access to essential medicines, said it was “shocked” and “baffled” by the decision. In the interest of “public welfare and transparency” the group urged regulators to make the data public.<br><br>
+
+To compound this anxiety, one participant in the phase III trials died. The hospital at which the trial took place, the People’s College of Medical Sciences and Research Centre in Bhopal, has been accused of not following proper procedures while screening candidates for the trials.<br><br>
+
+However, 45 doctors—including two former directors of the All India Institute of Medical Science—labelled the criticisms of Covaxin as “irresponsible.”17 They called the vaccine India’s “gift to humanity.”<br><br></h2></blockquote>
+<h1 style="color: red ;"><u>So what do we know about Covaxin?</u></h1>
+<blockquote>
+<h2 style="font-size:20px"> Covaxin is an inactivated vaccine which means that it is made up of killed coronaviruses, making it safe to be injected into the body.<br><br>
+
+Bharat Biotech, a 24-year-old vaccine maker with a portfolio of 16 vaccines and exports to 123 countries, used a sample of the coronavirus, isolated by India's National Institute of Virology.<br><br>
+
+When administered, immune cells can still recognise the dead virus, prompting the immune system to make antibodies against the pandemic virus.<br><br>
+The two doses are given four weeks apart. The vaccine can be stored at 2C to 8C.<br><br>
+
+The vaccine has an efficacy rate of 81%, preliminary data from its phase 3 trial shows.<br><br>
+
+India's regulators gave the vaccine an emergency approval in January while the third phase of the trial was still underway, sparking scepticism and questions from experts.<br><br>
+
+Bharat Biotech says it has a stockpile of 20 million doses of Covaxin, and is aiming to make 700 million doses out of its four facilities in two cities by the end of the year.<br><br>
+</h2></blockquote>
+<p align="center">
+  <img src="https://c.ndtvimg.com/2020-12/uirtqpbo_covaxin-covaxin-clinical-trial-covaxin-trials_625x300_22_December_20.jpg" alt="Italian" style="width: 45%;"></p>
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Privacy</h3>
+                       FOIA
+No Fear Act<br>
+OIG
+Nondiscrimination<br>
+Accessibility<br>
+                            
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>CDC Information</h3>
+                        About CDC
+Jobs<br>
+Funding<br>
+Policies<br>
+File Viewers & Players<br>
+                                            </div>
+                    <div class="col-md-6 item text">
+                        <h3>About</h3>
+                        <p>Office of Data Science Strategy Site Map Web Policies and Notices FOIA No Fear Act
+DPCPSI Home NIH Home Office of the Inspector General USA.gov
+NIH…Turning Discovery Into Health®
+
+National Institutes of Health, 9000 Rockville Pike, Bethesda, Maryland 20892
+
+U.S. Department of Health and Human Services</p>
+
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
